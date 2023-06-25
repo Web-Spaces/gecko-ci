@@ -37,4 +37,11 @@ jobs:
           df -h
           cd ~
           git clone https://github.com/capyloon/gecko-b2g -b capyloon --depth=1
-          df -h
+          git clone  https://github.com/Web-Spaces/gecko-ci
+          cd gecko-ci
+          chmod +x build-win.sh
+          cp mozconfig-b2g-win-x86_64 ../gecko-b2g
+          cp build-win.sh ../gecko-b2g
+          cd ../gecko-b2g
+          ./build-win.sh
+          
